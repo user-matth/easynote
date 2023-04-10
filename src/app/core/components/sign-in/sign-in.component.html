@@ -1,0 +1,22 @@
+<div class="h-100vh">
+  <div class="d-flex justify-content-center align-items-center flex-column w-100 h-100">
+    <h1 class="text-center mb-5 fw-bold">Sign in</h1>
+    <form [formGroup]="form" (submit)="signin()">
+      <div class="mb-3 w-100">
+        <label for="exampleFormControlInput1" class="form-label">Email</label>
+        <input type="email" class="form-control border-secondary bg-secondary bg-opacity-10 w-100 fs-12" style="--bs-border-opacity: .5;" id="exampleFormControlInput1" placeholder="Enter your email address..." autocomplete="off" formControlName="login">
+      </div>
+      <div class="mb-4 w-100" *ngIf="form.value.login != ''">
+        <label for="exampleFormControlInput1" class="form-label">Password</label>
+        <input type="password" class="form-control border-secondary bg-secondary bg-opacity-10 w-100 fs-12" style="--bs-border-opacity: .5;" id="exampleFormControlInput1" placeholder="Enter your password" formControlName="password">
+      </div>
+      <button type="submit" class="btn border-dark bg-black text-black bg-opacity-10 w-100 mb-3 fs-11"  style="--bs-border-opacity: .1;">
+        Continue with email
+      </button>
+      <p class="text-muted text-center fs-10"><small>By clicking “Continue with Apple/Google/Email/SAML” above, you acknowledge that you have read and understood, and agree to Notion's and agree to Easy Note's Terms & Conditions and Privacy Policy. If you don't have an account, <span class="text-primary pointer text-decoration-underline" (click)="navigate('sign-up')">sign-up</span> now!</small></p>
+    </form>
+  </div>
+  <div class="hero-bottom-section">
+    <img src="https://img.freepik.com/free-vector/abstract-horizontal-grid-lines-graph-style-graphic-design_1017-39918.jpg?w=2000" class="hero-bottom" alt="">
+  </div>
+</div>
