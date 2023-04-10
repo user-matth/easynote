@@ -13,12 +13,20 @@ export class NoteService extends BaseResourceService<NoteModel>{
     super(`${environment.api}/api/${environment.version}/notes`, injector, NoteModel.fromJson)
   }
 
-  getAllNotes(){
+  getAllNotes() {
     return this.http.get<any[]>(`${this.baseApiUrl}`)
   }
 
-  getNoteById(id: any){
+  getNoteById(id: any) {
     return this.http.get<any[]>(`${this.baseApiUrl}/${id}`)
+  }
+
+  updateNote(id: any, body: any) {
+    return this.http.patch(`${this.baseApiUrl}/${id}`, body)
+  }
+
+  createNote(body: any){
+    return this.http.post(`${this.baseApiUrl}`, body)
   }
 
 }
